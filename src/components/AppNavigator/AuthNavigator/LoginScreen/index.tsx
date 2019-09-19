@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, View, Text } from 'react-native';
-import LoginForm from './LoginForm';
+// import LoginForm from './LoginForm';
 // import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
 // import { Dispatch } from 'redux';
@@ -10,15 +10,18 @@ import LoginForm from './LoginForm';
 // import { useStyles } from './style';
 
 
-const LoginScreen: React.FC = () => {
+const LoginScreen: React.FC = ({ navigation }) => {
+
+  const openRegistration= () => {
+    navigation.navigate('Registration');
+  };
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Login Screen</Text>
-      <LoginForm />
       <Button
         title="Go to Registration"
-        onPress={() => this.props.navigation.navigate('Registration')}
+        onPress={openRegistration}
       />
     </View>
   );

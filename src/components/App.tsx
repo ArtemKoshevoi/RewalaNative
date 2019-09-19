@@ -16,7 +16,7 @@ import store from '../store';
 const App: React.FC = () => {
   return (
     <Provider store={store}>
-      <AppContainer/>
+      <AppContainer />
     </Provider>
   )
 };

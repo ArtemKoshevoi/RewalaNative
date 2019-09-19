@@ -42,14 +42,19 @@ import { Button, View, Text } from 'react-native';
 // export default connect(null, mapDispatchToProps)(Login);
 
 
-const RegistrationScreen: React.FC = () => {
+const RegistrationScreen: React.FC = ({ navigation }) => {
+
+  const openLogin= () => {
+    navigation.navigate('Login');
+  };
+
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Registration Screen</Text>
       <Button
         title="Go to Login"
-        onPress={() => this.props.navigation.navigate('Login')}
+        onPress={openLogin}
       />
     </View>
   );
