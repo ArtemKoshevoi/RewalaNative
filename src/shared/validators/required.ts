@@ -1,0 +1,1 @@
+export const required = (values: string) => !values ? 'Required' : undefined;
