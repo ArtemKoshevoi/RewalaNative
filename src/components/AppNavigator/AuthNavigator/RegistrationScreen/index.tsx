@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, View, Text } from 'react-native';
+import { NavigationScreenProps } from "react-navigation";
 // import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
 // import { Dispatch } from 'redux';
@@ -40,9 +41,11 @@ import { Button, View, Text } from 'react-native';
 // };
 //
 // export default connect(null, mapDispatchToProps)(Login);
+type Props =
+  & NavigationScreenProps<{}>
+  ;
 
-
-const RegistrationScreen: React.FC = ({ navigation }) => {
+const RegistrationScreen: React.FC<Props> = ({ navigation }) => {
 
   const openLogin= () => {
     navigation.navigate('Login');

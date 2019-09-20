@@ -1,5 +1,9 @@
 import React from 'react';
-import { Button, View, Text } from 'react-native';
+import { Button, View, Text, Alert } from 'react-native';
+import { NavigationScreenProps } from "react-navigation";
+import LoginForm from './LoginForm';
+import { Field, Formik, FormikProps } from 'formik';
+import { LoginFormValues } from '../../../../shared/interfaces/loginFormValues';
 // import LoginForm from './LoginForm';
 // import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
@@ -9,21 +13,26 @@ import { Button, View, Text } from 'react-native';
 // import LoginForm from './LoginForm';
 // import { useStyles } from './style';
 
+type Props =
+  & NavigationScreenProps<{}>
+  ;
 
-const LoginScreen: React.FC = ({ navigation }) => {
+const LoginScreen: React.FC<Props> = ({ navigation }) => {
 
-  const openRegistration= () => {
-    navigation.navigate('Registration');
+  const Submit = ({email, password}: LoginFormValues) => {
+    Alert({email, password});
   };
-
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Login Screen</Text>
-      <Button
-        title="Go to Registration"
-        onPress={openRegistration}
-      />
-    </View>
+      <Formik initialValues={{email: '', password: ''}} onSubmit={Submit}>
+        {(FormikProps) => (
+          <View>
+            <Text>
+              Login form
+            </Text>
+            <Button title={'Log in'} onPress={FormikProps.handleSubmit}/>
+          </View>
+        )}
+      </Formik>
   );
 };
 
