@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { View } from "react-native";
 import { Button, Input } from "react-native-elements";
 import { NavigationScreenProp } from "react-navigation";
+import { style } from '../style';
 
 interface Props {
   navigation: NavigationScreenProp<any, any>
@@ -15,6 +16,7 @@ class LoginForm extends Component<Props, object> {
         placeholder='Email'
         keyboardType="email-address"
         autoCapitalize="none"
+        // containerStyle={style.container}
       />
       <Input placeholder='Password' secureTextEntry autoCapitalize="none" />
       <Button

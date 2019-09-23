@@ -10,8 +10,9 @@ const imageWidth = "80%";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "space-evenly",
-    alignItems: "center"
+    justifyContent: "center",
+    alignItems: "center",
+    width: imageWidth,
   },
   forgottenPasswordButtonContainer: {
     width: imageWidth
@@ -31,6 +32,10 @@ const styles = StyleSheet.create({
   disabled: {
     backgroundColor: primaryBlue,
     opacity: 0.3
+  },
+  btn: {
+    paddingTop: 20,
+    paddingBottom: 40,
   }
 });
 

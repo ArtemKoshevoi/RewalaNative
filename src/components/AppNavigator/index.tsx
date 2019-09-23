@@ -1,9 +1,9 @@
 import { createStackNavigator } from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import LoginScreen from './AuthNavigator/LoginScreen';
 import RegistrationScreen from './AuthNavigator/RegistrationScreen';
 
-const RootStack = createStackNavigator ({
+const Navigator = createSwitchNavigator ({
   Login: {
     screen: LoginScreen,
   },
@@ -15,5 +15,20 @@ const RootStack = createStackNavigator ({
   {
     initialRouteName: 'Login'
   });
+
+const RootStack = createStackNavigator(
+  {
+    Navigator: {
+      screen: Navigator,
+      navigationOptions: {
+        header: null,
+      },
+    },
+  },
+  {
+    mode: 'modal',
+    headerMode: 'screen',
+  },
+);
 
 export const AppContainer = createAppContainer(RootStack);
