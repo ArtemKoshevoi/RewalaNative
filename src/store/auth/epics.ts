@@ -5,7 +5,6 @@ import { PayloadAction } from 'typesafe-actions';
 import { LoginFormValues } from '../../shared/interfaces/loginFormValues';
 import { RegistrationFormValues } from '../../shared/interfaces/registrationFormValues';
 import { authService } from '../../shared/services/auth.service';
-import { redirectToHomepage, redirectToLoginpage } from '../../shared/services/nav.service';
 import { Actions as AuthRequestActions, ActionTypes as AuthRequestActionTypes } from '../auth-requests';
 import { RootActions } from '../index';
 import { transferActionEpicFactory } from '../utils/transfer-action';
@@ -42,7 +41,7 @@ export const redirectOnLoginSuccessEpic: Epic = (action$: Observable<RootActions
   ofType(ActionTypes.SET_ACCESS_TOKEN),
   tap((action) => {
     authService.setToken(action.payload);
-    redirectToHomepage();
+    // redirectToHomepage();
   }),
   filter(({meta}) => meta === 'reload'),
   map(() =>  Actions.getCurrentUser()),
@@ -72,7 +71,7 @@ export const redirectOnLogoutSuccessEpic: Epic = (action$: Observable<RootAction
   ofType(ActionTypes.LOGOUT_SUCCEDED),
   tap(() => {
     authService.removeToken();
-    redirectToLoginpage();
+    // redirectToLoginpage();
   }),
   ignoreElements(),
 );

@@ -7,7 +7,7 @@ import { RegistrationFormValues } from '../../shared/interfaces/registrationForm
 import { User } from '../../shared/interfaces/user';
 import link from '../../shared/link';
 import { GraphQLResponse } from '../../shared/types/graphql';
-import { responseInterceptor } from '../utils/response-interceptor';
+import { responseInterceptor} from '../utils/response-interceptor';
 
 class AuthRequestsService {
   login(userLogin: LoginFormValues) {

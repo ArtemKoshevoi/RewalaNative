@@ -9,6 +9,7 @@ import { CommonTextField } from '../../../../shared/components/CommonTextField';
 import { style } from './style';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
+import { Actions } from '../../../../store/auth/actions';
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   login: (loginFormValues: LoginFormValues) => dispatch(Actions.login(loginFormValues)),
