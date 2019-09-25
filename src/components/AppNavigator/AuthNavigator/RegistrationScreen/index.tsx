@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, View, Text } from 'react-native';
-import { NavigationScreenProps } from "react-navigation";
+import { Button, Text, View } from 'react-native';
+import { NavigationScreenProps } from 'react-navigation';
 // import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
 // import { Dispatch } from 'redux';
@@ -56,7 +56,7 @@ const RegistrationScreen: React.FC<Props> = ({ navigation }) => {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Registration Screen</Text>
       <Button
-        title="Go to Login"
+        title='Go to Login'
         onPress={openLogin}
       />
     </View>

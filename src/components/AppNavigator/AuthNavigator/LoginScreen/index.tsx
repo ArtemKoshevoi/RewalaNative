@@ -1,16 +1,16 @@
+import { Field, Formik } from 'formik';
 import React from 'react';
 import { Button, View } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
-import { Field, Formik } from 'formik';
-import { LoginFormValues } from '../../../../shared/interfaces/loginFormValues';
-import { required } from '../../../../shared/validators/required';
-import { email } from '../../../../shared/validators/email';
-import { CommonTextField } from '../../../../shared/components/CommonTextField';
-import { style } from './style';
-import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { Actions } from '../../../../store/auth/actions';
+import { Dispatch } from 'redux';
 import * as yup from 'yup'
+import { CommonTextField } from '../../../../shared/components/CommonTextField';
+import { LoginFormValues } from '../../../../shared/interfaces/loginFormValues';
+import { email } from '../../../../shared/validators/email';
+import { required } from '../../../../shared/validators/required';
+import { Actions } from '../../../../store/auth/actions';
+import { style } from './style';
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   login: (loginFormValues: LoginFormValues) => dispatch(Actions.login(loginFormValues)),

@@ -5,7 +5,9 @@
   "scripts": {
     "start": "react-native start",
     "test": "jest",
-    "lint": "tslint --fix -c tslint.json -p tsconfig.json"
+    "lint": "tslint --fix -c tslint.json -p tsconfig.json",
+    "prettier-check": "prettier --check --config '.prettierrc' 'src/**/*.{ts,tsx}'",
+    "prettier-fix": "prettier --check --write --config .prettierrc  'src/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.1",
@@ -32,6 +34,7 @@
     "redux-observable": "^1.2.0",
     "reselect": "^4.0.0",
     "rxjs": "^6.5.3",
+    "tslint-react-hooks": "^2.2.1",
     "typesafe-actions": "^4.4.2",
     "yup": "^0.27.0"
   },
@@ -48,6 +51,7 @@
     "babel-jest": "^24.1.0",
     "jest": "^24.1.0",
     "metro-react-native-babel-preset": "0.54.1",
+    "prettier": "^1.18.2",
     "react-native-debugger": "^1.1.0",
     "react-navigation-stack": "^1.8.0",
     "react-test-renderer": "16.8.6",
@@ -55,6 +59,8 @@
     "remote-redux-devtools": "^0.5.16",
     "remotedev-rn-debugger": "^0.8.4",
     "tslint": "^5.20.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
     "tslint-react": "^4.1.0",
     "typescript": "^3.6.3"
   },

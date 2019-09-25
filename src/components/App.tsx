@@ -9,11 +9,11 @@
  */
 
 import React from 'react'
+import { NavigationContainerComponent } from 'react-navigation';
 import { Provider } from 'react-redux';
-import { AppContainer } from './AppNavigator';
-import store from '../store';
-import { NavigationContainerComponent } from "react-navigation";
 import navService from '../shared/services/nav.service';
+import store from '../store';
+import { AppContainer } from './AppNavigator';
 
 const App: React.FC = () => {
   const setNavigator = (navigatorRef: NavigationContainerComponent) => {

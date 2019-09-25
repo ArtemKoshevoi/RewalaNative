@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export const style = StyleSheet.create<StyleSheet.NamedStyles<any>>({
   rootContainer: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: 'center',
     paddingHorizontal: 15,
   },
   inputContainer: {

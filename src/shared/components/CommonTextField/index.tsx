@@ -1,6 +1,6 @@
+import { FieldProps } from 'formik';
 import * as React from 'react';
 import { Input, InputProps } from 'react-native-elements';
-import { FieldProps } from 'formik';
 
 type Props = FieldProps & InputProps;
 

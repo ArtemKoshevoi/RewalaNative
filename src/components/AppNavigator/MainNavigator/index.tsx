@@ -1,8 +1,8 @@
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { HomeNavigator } from './HomeNavigator';
 import { NotificationNavigator } from './NotificationNavigator';
-import { SearchNavigator } from './SearchNavigator';
 import { ProfileNavigator } from './ProfileNavigator';
+import { SearchNavigator } from './SearchNavigator';
 // import { createBottomTabNavigator } from 'react-navigation';
 
 export const MainNavigator = createBottomTabNavigator(

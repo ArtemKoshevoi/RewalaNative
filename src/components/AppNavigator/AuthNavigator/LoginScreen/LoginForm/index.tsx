@@ -1,9 +1,9 @@
-import styles from "./styles";
-import React, { Component } from "react";
-import { View } from "react-native";
-import { Button, Input } from "react-native-elements";
-import { NavigationScreenProp } from "react-navigation";
+import React, { Component } from 'react';
+import { View } from 'react-native';
+import { Button, Input } from 'react-native-elements';
+import { NavigationScreenProp } from 'react-navigation';
 import { style } from '../style';
+import styles from './styles';
 
 interface Props {
   navigation: NavigationScreenProp<any, any>
@@ -14,11 +14,11 @@ class LoginForm extends Component<Props, object> {
     <View style={styles.container}>
       <Input
         placeholder='Email'
-        keyboardType="email-address"
-        autoCapitalize="none"
+        keyboardType='email-address'
+        autoCapitalize='none'
         // containerStyle={style.container}
       />
-      <Input placeholder='Password' secureTextEntry autoCapitalize="none" />
+      <Input placeholder='Password' secureTextEntry={true} autoCapitalize='none' />
       <Button
         title='Log In'
         containerStyle={styles.loginButtonContainer}

@@ -1,5 +1,5 @@
-import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 // import LoginScreen from './AuthNavigator/LoginScreen';
 // import RegistrationScreen from './AuthNavigator/RegistrationScreen';
 import { AuthNavigator } from './AuthNavigator';
