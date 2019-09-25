@@ -1,12 +1,11 @@
-import { createStackNavigator } from 'react-navigation';
-
-import { ConfirmLoginScreen } from './ConfirmLoginScreen';
-import { LoginScreen } from './LoginScreen';
+import LoginScreen from './LoginScreen';
+import RegistrationScreen from './RegistrationScreen';
+import { createStackNavigator } from 'react-navigation-stack';
 
 export const AuthNavigator = createStackNavigator(
   {
     LoginScreen,
-    ConfirmLoginScreen,
+    RegistrationScreen,
   },
   {
     headerMode: 'none',

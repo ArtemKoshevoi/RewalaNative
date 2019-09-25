@@ -48,7 +48,7 @@ type Props =
 const RegistrationScreen: React.FC<Props> = ({ navigation }) => {
 
   const openLogin= () => {
-    navigation.navigate('Login');
+    navigation.navigate('LoginScreen');
   };
 
 

@@ -1,5 +1,6 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+// import { composeWithDevTools } from 'redux-devtools-extension';
+import { composeWithDevTools } from 'remote-redux-devtools';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import { ActionType, StateType } from 'typesafe-actions';
 
