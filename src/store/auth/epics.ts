@@ -9,6 +9,7 @@ import { Actions as AuthRequestActions, ActionTypes as AuthRequestActionTypes } 
 import { RootActions } from '../index';
 import { transferActionEpicFactory } from '../utils/transfer-action';
 import { Actions, ActionTypes } from './actions';
+import navService from '../../shared/services/nav.service';
 
 export const loginEpic: Epic = (action$: Observable<RootActions>) => action$.pipe(
   ofType(ActionTypes.LOGIN),
@@ -41,7 +42,7 @@ export const redirectOnLoginSuccessEpic: Epic = (action$: Observable<RootActions
   ofType(ActionTypes.SET_ACCESS_TOKEN),
   tap((action) => {
     authService.setToken(action.payload);
-    // redirectToHomepage();
+    return navService.navigate('MainNavigator');
   }),
   filter(({meta}) => meta === 'reload'),
   map(() =>  Actions.getCurrentUser()),

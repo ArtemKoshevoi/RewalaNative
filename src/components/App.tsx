@@ -12,14 +12,21 @@ import React from 'react'
 import { Provider } from 'react-redux';
 import { AppContainer } from './AppNavigator';
 import store from '../store';
+import { NavigationContainerComponent } from "react-navigation";
+import navService from '../shared/services/nav.service';
 
 const App: React.FC = () => {
+  const setNavigator = (navigatorRef: NavigationContainerComponent) => {
+    navService.setNavigator(navigatorRef);
+  };
+
   return (
     <Provider store={store}>
-      <AppContainer />
+      <AppContainer ref={setNavigator}/>
     </Provider>
   )
 };
 
 
 export default App;
+
