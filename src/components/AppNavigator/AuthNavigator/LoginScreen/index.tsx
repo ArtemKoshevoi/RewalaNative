@@ -4,7 +4,6 @@ import { Button, View } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import * as yup from 'yup'
 import { CommonTextField } from '../../../../shared/components/CommonTextField';
 import { LoginFormValues } from '../../../../shared/interfaces/loginFormValues';
 import { email } from '../../../../shared/validators/email';
@@ -31,15 +30,6 @@ const LoginScreen: React.FC<Props> = ({navigation, login}) => {
     login({email, password});
   };
 
-  const validationSchema = yup.object().shape({
-    email: yup.string()
-    .email('E-mail is not valid!')
-    .required('E-mail is required!'),
-    password: yup.string()
-    .min(6, 'Password has to be longer than 6 characters!')
-    .required('Password is required!')
-  });
-
   return (
     <View style={style.rootContainer}>
       <Formik initialValues={{email: '', password: ''}} onSubmit={Submit}>
@@ -58,13 +48,12 @@ const LoginScreen: React.FC<Props> = ({navigation, login}) => {
               name='email'
               component={CommonTextField}
               placeholder='Email'
-              validate={[required, email]}
+              validate={required}
               inputContainerStyle={style.inputContainer}
               onChangeText={handleChange('email')}
               value={values.email}
               keyboardType='email-address'
               errorMessage={errors.email}
-              validationSchema={validationSchema}
             />
             <Field
               name='password'
