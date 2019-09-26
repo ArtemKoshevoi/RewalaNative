@@ -30,17 +30,3 @@ const RootStack = createStackNavigator(
 );
 
 export const AppContainer = createAppContainer(RootStack);
-
-
-// const Navigator = createSwitchNavigator ({
-//   Login: {
-//     screen: LoginScreen,
-//   },
-//
-//   Registration: {
-//     screen: RegistrationScreen,
-//   },
-// },
-//   {
-//     initialRouteName: 'Login'
-//   });
